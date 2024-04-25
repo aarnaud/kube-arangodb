@@ -379,7 +379,7 @@ func (s ServerGroupSpec) Validate(group ServerGroup, used bool, mode DeploymentM
 			case ServerGroupAgents:
 				minCount = 3
 			case ServerGroupDBServers, ServerGroupCoordinators, ServerGroupSyncMasters, ServerGroupSyncWorkers:
-				minCount = 2
+				minCount = 1
 			}
 		} else {
 			// Set validation boundaries for development mode
@@ -389,7 +389,7 @@ func (s ServerGroupSpec) Validate(group ServerGroup, used bool, mode DeploymentM
 					minCount = 2
 				}
 			case ServerGroupDBServers:
-				minCount = 2
+				minCount = 1
 			}
 		}
 		if s.GetMinCount() > s.GetMaxCount() {
